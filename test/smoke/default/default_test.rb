@@ -5,14 +5,23 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
-  # This is an example test, replace with your own test.
-  describe user('root'), :skip do
-    it { should exist }
-  end
+describe port(9323) do
+  it { should be_listening }
 end
 
-# This is an example test, replace it with your own test.
-describe port(80), :skip do
-  it { should_not be_listening }
+describe port(2377) do
+  it { should be_listening }
+end
+
+describe port (7946) do
+  it { should be_listening }
+end
+
+describe port (4789) do
+  it { should be_listening }
+end
+
+describe docker.info do
+  its('Swarm.LocalNodeState') { should eq 'active' }
+  its('ExperimentalBuild') { should eq true }
 end
