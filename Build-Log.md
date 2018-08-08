@@ -3,6 +3,10 @@
   * add installation of the rexray plugin to recipe
   * consider moving prometheus into separate app cookbook?
 
+* 2018-08-07
+  * Build custom inspec resource.
+  * Resource compiles, but no tests are executing.
+
 * 2018-08-04
   * Created docker_swarm resource for initializing and leaving a swarm.
   * Added attributes to increase flexibility of the default recipe
